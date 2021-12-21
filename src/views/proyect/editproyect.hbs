@@ -1,0 +1,126 @@
+
+<div class="col-md-6 mx-auto">
+  <div class="container">
+    <div class="col-md-4 mx-auto">
+      <h1>
+        Editar Proyecto
+      </h1>
+    </div>
+    <br />
+    <div class="md-6 row">
+      <form action="{{id}}" method="post" class="row">
+        <div class="form-group col-lg-6">
+          <input
+            type="text"
+            name="idproject"
+            class="form-control"
+            placeholder="Id Proyecto"
+            value="{{project.idproject}}"
+            autofocus
+          />
+        </div>
+        <br />
+        <div class="form-group col-lg-6">
+          <input
+            type="text"
+            name="nameproyect"
+            class="form-control"
+            placeholder="Nombre proyecto"
+            value="{{project.nameproyect}}"
+          />
+        </div>
+        <hr />
+        <br />
+        <div class="form-group col-lg-6">
+          <input
+            type="text"
+            name="goal"
+            class="form-control"
+            placeholder="Objetivo"
+            value="{{project.goal}}"
+          />
+        </div>
+        <br />
+        <div class="form-group col-lg-6">
+          <input
+            type="text"
+            name="specifitgoal"
+            class="form-control"
+            placeholder="Objetivo especifico"
+            value="{{project.specifitgoal}}"
+          />
+        </div>
+        <hr />
+        <br />
+        <div class="form-group col-lg-6">
+          <label>
+            Presupuesto-Valor
+          </label>
+          <input
+            type="Number"
+            name="butget"
+            class="form-control"
+            placeholder="Presupuesto"
+            value="{{project.butget}}"
+          />
+        </div>
+        <br />
+        <div class="form-group col-lg-6">
+          <label>
+            Fecha Inicio Proyecto
+          </label>
+          <input type="date" name="dateI" class="form-control" value="{{project.dateI}}" />
+        </div>
+        <hr />
+        <br />
+        <div class="form-group col-lg-6">
+          <label>
+            Fecha Fin Proyecto
+          </label>
+          <input type="date" name="dateF" class="form-control" value="{{project.dateF}}" />
+        </div>
+        <br />
+        <div class="form-group col-lg-6">
+          <label>
+            Estado Proyecto
+          </label>
+          <select name="status" class="form-control" value="{{project.status}}">
+            <option value="Activo">
+              Activo
+            </option>
+            <option value="Inactivo">
+              Inactivo
+            </option>
+          </select>
+        </div>
+        <hr />
+        <br />
+        <div class="form-group col-lg-6">
+          <label>
+            Fase Proyecto
+          </label>
+          <select name="fase" class="form-control" value="{{project.fase}}">
+            <option value="Iniciado">
+              Iniciado
+            </option>
+            <option value="En desarrollo">
+              En desarrollo
+            </option>
+            <option value="Terminado">
+              Terminado
+            </option>
+            <option value="Nulo">
+              Nulo
+            </option>
+          </select>
+        </div>
+        <hr />
+        <div class="form-group">
+          <button class="btn btn-primary btn-block" type="submit">
+            Guardar
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

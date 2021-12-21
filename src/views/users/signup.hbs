@@ -1,0 +1,50 @@
+<div class='row'>
+    <div class="col-md-4 mx-auto">
+        <div class="card">
+            <div class="card-header">
+                Registrar cuenta
+
+            </div>
+            <div class="card-body">
+                <form action="/users/signup" method="post">
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="username" placeholder="Nombre" value="{{username}}">
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <input type="password" class="form-control" name="password" placeholder="Contraseña" value="{{password}}">
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <input type="password" class="form-control" name="confirm_password" placeholder=" Confirmar Contraseña" value="{{confirm_password}}">
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <input type="email" class="form-control" name="email" placeholder="Email" value="{{email}}">
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <select name="tipo" class="form-control" value='{{tipo}}'>
+                         <option value="Lider">
+                            Lider
+                         </option>
+                         <option value="Estudiante">
+                            Estudiante
+                         </option>
+                        </select>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="identification" placeholder="identificacion" value="{{identification}}">
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-block">
+                            Registro
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

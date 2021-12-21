@@ -1,0 +1,70 @@
+<div class="container">
+  <div class="col-md-4 mx-auto">
+    <h1>
+      Proyectos Registrados
+    </h1>
+  </div>
+</div>
+<br />
+<div class="row">
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th scope="col" >Id</th>
+        <th scope="col " >Nombre</th>
+        <th scope="col ">Objetivo</th>
+        <th scope="col ">Especifico</th>
+        <th scope="col ">Presupuesto</th>
+        <th scope="col " style="text-align: center">Inicio</th>
+        <th scope="col " style="text-align: center">Final</th>
+        <th scope="col ">Estado</th>
+        <th scope="col ">Fase</th>
+      </tr>
+    </thead>
+
+  {{#each proyects}}
+    <tbody>
+      <tr>
+        <td>
+          {{idproject}}
+        </td>
+        </th>
+       <td>
+          {{nameproyect}}
+       </td>
+        <td>
+          {{goal}}
+        </td>
+        <td>
+          {{specifitgoal}}
+        </td>
+        <td>
+          {{butget}}
+        </td>
+        <td>
+          {{dateI}}
+        </td>
+        <td>
+          {{dateF}}
+        </td>
+        <td>
+          {{status}}
+        </td>
+        <td >
+          {{fase}}
+        </td>
+         <td >
+           <a href="/proyects/edit/{{_id}}"><i class="fas fa-pencil-alt"></i></a>
+        </td>
+        <td >
+	        <form action="/proyects/delete/{{_id}}" method="post">
+	            <button type="submit" class="btn btn-danger btn-sm">Borrar</button>
+	        </form>
+        </td>
+      </tr>
+    </tbody>
+
+  {{/each}}
+  </table>
+  <a href="/proyects/formproyect" class="btn btn-success">Ingresar Nuevo Proyecto</a>
+</div>
