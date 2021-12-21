@@ -15,7 +15,6 @@
 			<th scope="col ">Usuario</th>
 			<th scope="col ">Propuesta</th>
 			<th scope="col ">Estado</th>
-			<th scope="col ">Fase</th>
 		</tr>
 		</thead>
 
@@ -39,10 +38,12 @@
 					{{state}}
 				</td>
 				<td >
-					<a href="/inscription/edit/{{_id}}"><i class="fas fa-pencil-alt"></i></a>
+					<form action="/inscription/approve/{{_id}}" method="post">
+						<button type="submit" class="btn btn-primary btn-sm">Aprobar</button>
+					</form>
 				</td>
 				<td >
-					<form action="/proyects/delete/{{_id}}" method="post">
+					<form action="/inscription/delete/{{_id}}" method="post">
 						<button type="submit" class="btn btn-danger btn-sm">Borrar</button>
 					</form>
 				</td>

@@ -4,7 +4,7 @@ const User = require('../models/User');
 const Inscription = require('../models/Inscription');
 const {isAuthenticated, isLeader} = require('../middleware/auth')
 
-router.get('/inscription', isAuthenticated,isLeader, async (req,res) =>{
+router.get('/inscription', isAuthenticated, async (req,res) =>{
     const projects = await Proyect.find().lean()
     res.render('inscription/form', {projects});
 })
@@ -21,7 +21,18 @@ router.post('/inscription',isAuthenticated, async (req, res) => {
     res.redirect('/proyects')
 })
 
-router.get('/inscriptions',async (req,res) =>{
+router.post('/inscription/approve/:id', async (req, res) => {
+    const _id = req.params.id;
+    await Inscription.findByIdAndUpdate(_id, {state: 'Aprobado'}).exec();
+    res.redirect('/inscriptions')
+})
+router.post('/inscription/delete/:id', async (req, res) =>{
+    const _id = req.params.id;
+    await Inscription.deleteOne({_id}).exec();
+    res.redirect('/inscriptions')
+})
+
+router.get('/inscriptions',isAuthenticated, isLeader, async (req,res) =>{
     const dataRender = [];
     for await (const doc of Inscription.find()){
         const  {userId, description, state, projectId, _id } = doc;
