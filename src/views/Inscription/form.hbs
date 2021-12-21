@@ -10,7 +10,7 @@
 			<div class="form-group col-lg-6" style="text-align: center">
 				<label for="projects">Proyecto</label>
 				<select class="form-select " name="project" id="projects" required>
-				<option disabled>--Escoja el proyecto--</option>
+				<option disabled selected value="">--Escoja el proyecto--</option>
 				{{#each projects}}
 					<option value="{{this.idproject}}">{{this.nameproyect}}</option>
 				{{/each}}
