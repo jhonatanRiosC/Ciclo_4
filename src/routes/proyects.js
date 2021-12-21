@@ -1,8 +1,8 @@
 const router = require('express').Router();
-const { isAuthenticated } = require('../middleware/auth')
+const { isAuthenticated, isLeader } = require('../middleware/auth')
  const proyect = require('../models/proyect')
 
- router.get('/proyects',async (req, res) => {
+ router.get('/proyects', isAuthenticated, isLeader, async (req, res) => {
    const proyects = await proyect.find().lean();
    res.render('../views/proyect/allproyects.hbs',{proyects});
 })

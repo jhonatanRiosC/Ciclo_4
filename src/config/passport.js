@@ -3,7 +3,7 @@ const LocalStrategy = require('passport-local').Strategy;
 
 const User = require('../models/User')
 
-passport.use('LocalStrategy', new LocalStrategy ({
+passport.use('local', new LocalStrategy ({
     usernameField: 'email'
 }, async (email,password,done) => {
      const user = await User.findOne({email: email});
@@ -13,7 +13,7 @@ passport.use('LocalStrategy', new LocalStrategy ({
 
         const match = await  user.matchPassword(password);
          if(match) {
-             localStorage.setItem('user', email)
+             // localStorage.setItem('user', email)
              return done(null, user);
          } else {
              return done(null, false ,{message: 'Contraseña Incorrecta'});
