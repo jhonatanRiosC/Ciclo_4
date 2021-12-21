@@ -8,9 +8,9 @@ router.get('/users/signin', (req, res) => {
 
 router.post('/users/signin', passport.authenticate('local',{
     successRedirect: '/proyects',
-    failureRedirect: 'users/signin',
+    failureRedirect: '/users/signin',
     failureFlash: true
-    
+
 }))
 
 router.get('/users/signup', (req, res) => {
@@ -37,7 +37,7 @@ router.post('/users/signup', async (req, res) => {
         if (emailUser) {
             errors.push({text: 'El correo ya esta registrado'})
             res.render('users/signup', { errors, username, password, confirm_password, email, tipo, identification });
-            
+
         } else {
             const newUser = new User({ username, password, email, tipo, identification })
             newUser.password = await newUser.encryptPassword(password);

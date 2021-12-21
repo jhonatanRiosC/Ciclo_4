@@ -1,7 +1,7 @@
 const router = require('express').Router();
 
 router.get('/inscription',(req,res) =>{
-    res.send('Incripcion proyectos');
+    res.send('Inscripcion proyectos');
 })
 
 module.exports = router;
