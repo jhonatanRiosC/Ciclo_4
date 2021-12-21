@@ -1,0 +1,32 @@
+<div class="col-md-6 mx-auto">
+	<div class="container">
+		<div class="col-md-4 mx-auto">
+			<h1>
+				Inscripción a Proyecto
+			</h1>
+		</div>
+		<br/>
+		<form action="/inscription" method="post" class="row md-6">
+			<div class="form-group col-lg-6" style="text-align: center">
+				<label for="projects">Proyecto</label>
+				<select class="form-select " name="project" id="projects" required>
+				<option disabled>--Escoja el proyecto--</option>
+				{{#each projects}}
+					<option value="{{this.idproject}}">{{this.nameproyect}}</option>
+				{{/each}}
+			</select>
+			</div>
+			<br/>
+			<div class="form-group col-lg-6" style="text-align: center">
+				<label for="description">Inscripciones a realizar</label>
+				<textarea name="description" id="description" class="form-control" cols="30" rows="10"
+				          placeholder="Escriba acá las peticiones" required></textarea>
+			</div>
+			<hr>
+			<br />
+			<div class="md-2 offset-lg-5">
+				<button type="submit" class="btn btn-primary">Enviar</button>
+			</div>
+		</form>
+	</div>
+</div>

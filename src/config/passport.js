@@ -13,6 +13,7 @@ passport.use('LocalStrategy', new LocalStrategy ({
 
         const match = await  user.matchPassword(password);
          if(match) {
+             localStorage.setItem('user', email)
              return done(null, user);
          } else {
              return done(null, false ,{message: 'Contraseña Incorrecta'});
