@@ -46,7 +46,6 @@ router.get('/inscriptions',isAuthenticated, isLeader, async (req,res) =>{
             state,
             _id
         })
-        console.log(dataRender)
     }
     res.render('inscription/list', {dataRender});
 })

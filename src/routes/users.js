@@ -33,7 +33,6 @@ router.post('/users/signup', async (req, res) => {
         res.render('users/signup', { errors, username, password, confirm_password, email, tipo, identification });
     } else {
         const emailUser = await User.findOne({ email: email });
-        console.log(emailUser)
         if (emailUser) {
             errors.push({text: 'El correo ya esta registrado'})
             res.render('users/signup', { errors, username, password, confirm_password, email, tipo, identification });
@@ -52,14 +51,14 @@ router.post('/users/signup', async (req, res) => {
 
 
 
-    }   
+    }
 
 })
 
 router.get('/users/logout',(req,res) => {
-    req.logout(); 
-    req.flash("success_msg","Finalizaste sesion"); 
-    res.redirect("/users/signin") 
-})  
+    req.logout();
+    req.flash("success_msg","Finalizaste sesion");
+    res.redirect("/users/signin")
+})
 
 module.exports = router;
