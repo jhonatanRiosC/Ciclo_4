@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const mongodb_uri = 'mongodb://localhost/enigma-app'
+const mongodb_uri = process.env.MONGO_URI | 'mongodb://localhost/enigma-app';
 
 mongoose.connect(mongodb_uri, {
 
