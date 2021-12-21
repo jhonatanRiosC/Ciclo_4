@@ -19,7 +19,7 @@ middlewares.isLeader = async (req, res, next) => {
     if(tipo === 'Lider'){
         return next();
     } else {
-        res.redirect('/proyects')
+        res.redirect('/')
     }
 }
 module.exports = middlewares;
